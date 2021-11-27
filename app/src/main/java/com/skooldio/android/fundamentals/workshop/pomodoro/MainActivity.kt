@@ -2,6 +2,7 @@ package com.skooldio.android.fundamentals.workshop.pomodoro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -18,8 +19,12 @@ class MainActivity : AppCompatActivity() {
         private const val LONG_BREAK_DURATION_MAX = 30
     }
 
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
     }
 }
