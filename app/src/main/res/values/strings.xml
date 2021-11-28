@@ -6,4 +6,7 @@
     <string name="duration_value">%d min</string>
     <string name="ready">Ready</string>
     <string name="delimiter">:</string>
+    <string name="state_work">Work</string>
+    <string name="state_short_break">Break</string>
+    <string name="state_long_break">Long Break</string>
 </resources>
