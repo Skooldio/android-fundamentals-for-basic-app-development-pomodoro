@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.skooldio.android.fundamentals.workshop.pomodoro.data.PomodoroCounter
 import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityTimerBinding
 
 class TimerActivity : AppCompatActivity() {
