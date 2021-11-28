@@ -1,5 +1,6 @@
 package com.skooldio.android.fundamentals.workshop.pomodoro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.skooldio.android.fundamentals.workshop.pomodoro.data.LocalStorage
@@ -83,7 +84,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonReady.setOnClickListener {
-
+            val intent = Intent(this, TimerActivity::class.java)
+            startActivity(intent)
         }
     }
 
