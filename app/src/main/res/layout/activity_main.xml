@@ -44,6 +44,7 @@
                 app:icon="@drawable/ic_reduce_36" />
 
             <TextView
+                android:id="@+id/textViewWorkDuration"
                 style="@style/ConfigText"
                 android:layout_width="80dp"
                 android:layout_height="36dp"
@@ -87,6 +88,7 @@
                 app:icon="@drawable/ic_reduce_36" />
 
             <TextView
+                android:id="@+id/textViewShortDuration"
                 style="@style/ConfigText"
                 android:layout_width="80dp"
                 android:layout_height="36dp"
@@ -130,6 +132,7 @@
                 app:icon="@drawable/ic_reduce_36" />
 
             <TextView
+                android:id="@+id/textViewLongDuration"
                 style="@style/ConfigText"
                 android:layout_width="80dp"
                 android:layout_height="36dp"
