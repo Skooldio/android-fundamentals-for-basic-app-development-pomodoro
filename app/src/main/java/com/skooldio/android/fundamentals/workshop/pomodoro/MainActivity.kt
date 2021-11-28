@@ -84,7 +84,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonReady.setOnClickListener {
-            val intent = Intent(this, TimerActivity::class.java)
+            val intent = TimerActivity.newIntent(
+                context = this,
+                workDuration = workDuration,
+                shortBreakDuration = shortBreakDuration,
+                longBreakDuration = longBreakDuration
+            )
             startActivity(intent)
         }
     }
