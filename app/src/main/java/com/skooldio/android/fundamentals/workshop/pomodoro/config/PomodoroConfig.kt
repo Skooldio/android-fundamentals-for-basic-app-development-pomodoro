@@ -1,4 +1,4 @@
-package com.skooldio.android.fundamentals.workshop.pomodoro.data
+package com.skooldio.android.fundamentals.workshop.pomodoro.config
 
 object PomodoroConfig {
     const val WORK_DURATION_DEFAULT = 25
