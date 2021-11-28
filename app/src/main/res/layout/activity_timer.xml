@@ -11,6 +11,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewState"
         style="@style/StatusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textViewMinute"
             style="@style/TimerText"
             android:layout_width="80dp"
             android:layout_height="100dp"
@@ -41,6 +43,7 @@
             android:text="@string/delimiter" />
 
         <TextView
+            android:id="@+id/textViewSecond"
             style="@style/TimerText"
             android:layout_width="80dp"
             android:layout_height="100dp"
