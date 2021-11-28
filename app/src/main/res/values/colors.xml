@@ -16,4 +16,6 @@
     <color name="red_400">#FFEF5350</color>
     <color name="red_700">#FFD32F2F</color>
     <color name="red_900">#FFB71C1C</color>
+
+    <color name="ic_launcher_background">#EF9A9A</color>
 </resources>
