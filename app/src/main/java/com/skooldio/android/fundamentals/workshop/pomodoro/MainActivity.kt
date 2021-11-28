@@ -2,6 +2,7 @@ package com.skooldio.android.fundamentals.workshop.pomodoro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.skooldio.android.fundamentals.workshop.pomodoro.data.LocalStorage
 import com.skooldio.android.fundamentals.workshop.pomodoro.data.PomodoroConfig
 import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityMainBinding
 
@@ -34,11 +35,20 @@ class MainActivity : AppCompatActivity() {
         setupView()
     }
 
-    private fun setupView() {
+    override fun onStart() {
+        super.onStart()
+        restorePomodoroConfigValue()
         updateWorkDuration()
         updateShortBreakDuration()
         updateLongBreakDuration()
+    }
 
+    override fun onStop() {
+        super.onStop()
+        savePomodoroConfigValue()
+    }
+
+    private fun setupView() {
         binding.buttonAddWorkDuration.setOnClickListener {
             workDuration += 5
             workDuration = workDuration.coerceIn(WORK_DURATION_MIN, WORK_DURATION_MAX)
@@ -87,5 +97,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateLongBreakDuration() {
         binding.textViewLongDuration.text = getString(R.string.duration_value, longBreakDuration)
+    }
+
+    private fun savePomodoroConfigValue() {
+        LocalStorage.saveConfig(
+            context = this,
+            workDuration = workDuration,
+            shortBreakDuration = shortBreakDuration,
+            longBreakDuration = longBreakDuration
+        )
+    }
+
+    private fun restorePomodoroConfigValue() {
+        val (workDuration, shortBreakDuration, longBreakDuration) = LocalStorage.getConfig(this)
+        this.workDuration = workDuration
+        this.shortBreakDuration = shortBreakDuration
+        this.longBreakDuration = longBreakDuration
     }
 }
