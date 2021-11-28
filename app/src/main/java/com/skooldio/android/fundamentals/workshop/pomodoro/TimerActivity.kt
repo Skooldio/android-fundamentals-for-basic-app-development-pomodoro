@@ -1,9 +1,13 @@
 package com.skooldio.android.fundamentals.workshop.pomodoro
 
+import android.app.Notification
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.NotificationCompat
+import com.skooldio.android.fundamentals.workshop.pomodoro.config.NotificationConfig
 import com.skooldio.android.fundamentals.workshop.pomodoro.data.PomodoroCounter
 import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityTimerBinding
 
@@ -35,5 +39,15 @@ class TimerActivity : AppCompatActivity() {
 
     private fun restoreBundle() {
         config = intent.getParcelableExtra(EXTRA_CONFIG)
+    }
+
+    private fun showNotification(title: String, text: String) {
+        val notification = NotificationCompat.Builder(this, NotificationConfig.CHANNEL_ID).apply {
+            setContentTitle(title)
+            setContentText(text)
+            setSmallIcon(R.drawable.ic_notification)
+        }.build()
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        manager.notify(0, notification)
     }
 }
