@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.skooldio.android.fundamentals.workshop.pomodoro.config.NotificationConfig
 import com.skooldio.android.fundamentals.workshop.pomodoro.data.PomodoroCounter
 import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityTimerBinding
@@ -47,7 +48,7 @@ class TimerActivity : AppCompatActivity() {
             setContentText(text)
             setSmallIcon(R.drawable.ic_notification)
         }.build()
-        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val manager = NotificationManagerCompat.from(this)
         manager.notify(0, notification)
     }
 }
