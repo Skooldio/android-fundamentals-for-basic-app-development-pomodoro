@@ -26,9 +26,9 @@ object LocalStorage {
         context: Context
     ): Triple<Int, Int, Int> {
         val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
-        val workDuration = preferences.getInt(KEY_WORK_DURATION, 25)
-        val shortBreak = preferences.getInt(KEY_SHORT_BREAK_DURATION, 5)
-        val longBreak = preferences.getInt(KEY_LONG_BREAK_DURATION, 25)
+        val workDuration = preferences.getInt(KEY_WORK_DURATION, PomodoroConfig.WORK_DURATION_DEFAULT)
+        val shortBreak = preferences.getInt(KEY_SHORT_BREAK_DURATION, PomodoroConfig.SHORT_BREAK_DURATION_DEFAULT)
+        val longBreak = preferences.getInt(KEY_LONG_BREAK_DURATION, PomodoroConfig.LONG_BREAK_DURATION_DEFAULT)
         return Triple(workDuration, shortBreak, longBreak)
     }
 }
