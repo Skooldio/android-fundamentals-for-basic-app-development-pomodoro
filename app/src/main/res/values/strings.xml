@@ -10,4 +10,8 @@
     <string name="state_work">Work</string>
     <string name="state_short_break">Break</string>
     <string name="state_long_break">Long Break</string>
+    <string name="notification_time_up_title">Time\'s up</string>
+    <string name="notification_time_up_text_work">It\'s time to work</string>
+    <string name="notification_time_up_text_short_break">It\'s time to break</string>
+    <string name="notification_time_up_text_long_break">It\'s time to long break</string>
 </resources>
