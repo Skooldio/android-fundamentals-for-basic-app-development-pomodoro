@@ -2,6 +2,7 @@ package com.skooldio.android.fundamentals.workshop.pomodoro.data
 
 import android.content.Context
 import androidx.core.content.edit
+import com.skooldio.android.fundamentals.workshop.pomodoro.config.PomodoroConfig
 
 object LocalStorage {
     private const val PREFERENCES_NAME = "local_storage"
