@@ -10,6 +10,6 @@ object PomodoroConfig {
     const val SHORT_BREAK_DURATION_MAX = 15
 
     const val LONG_BREAK_DURATION_DEFAULT = 25
-    const val LONG_BREAK_DURATION_MIN = 20
+    const val LONG_BREAK_DURATION_MIN = 15
     const val LONG_BREAK_DURATION_MAX = 30
 }
