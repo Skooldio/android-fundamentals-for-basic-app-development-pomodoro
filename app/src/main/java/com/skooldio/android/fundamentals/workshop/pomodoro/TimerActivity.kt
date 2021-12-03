@@ -40,7 +40,10 @@ class TimerActivity : AppCompatActivity() {
     }
 
     private fun showNotification(title: String, text: String) {
-        val notification = NotificationCompat.Builder(this, NotificationConfig.CHANNEL_ID).apply {
+        val notification = NotificationCompat.Builder(
+            this,
+            NotificationConfig.CHANNEL_ID
+        ).apply {
             setContentTitle(title)
             setContentText(text)
             setSmallIcon(R.drawable.ic_notification)

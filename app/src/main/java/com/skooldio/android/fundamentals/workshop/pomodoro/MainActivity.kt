@@ -118,7 +118,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun restorePomodoroConfigValue() {
-        val (workDuration, shortBreakDuration, longBreakDuration) = LocalStorage.getConfig(this)
+        val (
+            workDuration,
+            shortBreakDuration,
+            longBreakDuration
+        ) = LocalStorage.getConfig(this)
         this.workDuration = workDuration
         this.shortBreakDuration = shortBreakDuration
         this.longBreakDuration = longBreakDuration
