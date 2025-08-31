@@ -7,6 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import com.skooldio.android.fundamentals.workshop.pomodoro.config.NotificationConfig
 import com.skooldio.android.fundamentals.workshop.pomodoro.databinding.ActivityTimerBinding
 
 class TimerActivity : AppCompatActivity() {
@@ -49,5 +52,15 @@ class TimerActivity : AppCompatActivity() {
 
     private fun restoreBundle() {
         config = intent.getParcelableExtra(EXTRA_CONFIG)
+    }
+
+    private fun showNotification(title: String, text: String) {
+        val notification = NotificationCompat.Builder(this, NotificationConfig.CHANNEL_ID).apply {
+            setContentTitle(title)
+            setContentText(text)
+            setSmallIcon(R.drawable.ic_notification)
+        }.build()
+        val manager = NotificationManagerCompat.from(this)
+        manager.notify(0, notification)
     }
 }
